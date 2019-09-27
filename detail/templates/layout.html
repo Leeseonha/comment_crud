@@ -1,0 +1,125 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>익명게시판</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}">    
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.css' %}">    
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}" type="text/css" media="screen" /> 
+    <!-- Theme color -->
+    <link id="switcher" href="{% static 'css/theme-color/default-theme.css' %}"  rel="stylesheet">     
+
+    <!-- Main style sheet -->
+    <link href="{%static 'css/style.css'%}" rel="stylesheet">    
+
+   
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>        
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>  
+  <!-- Pre Loader -->
+  <div id="aa-preloader-area">
+    <div class="mu-preloader">
+      <img src="{% static 'anonymity.gif' %}" alt=" loader img">
+    </div>
+  </div>
+  <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+      <span>Top</span>
+    </a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header section -->
+  <header id="mu-header">  
+    <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          {% block logo %}{% endblock logo %}
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="{% url 'newblog' %}">글쓰기</a></li>                                           
+            <li><a href="{% url 'home2'%}">익명게시판</a></li>                       
+               {% if user.is_authenticated %}
+              {% else %}
+              {% endif %} 
+            </li>
+          </ul>                            
+        </div>      
+      </div>          
+    </nav> 
+  </header>
+  <!-- End header section -->
+    {% block content %}
+    {% endblock %}
+  
+  <!-- Start Footer -->
+  <footer id="mu-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="mu-footer-area">
+           <div class="mu-footer-social">
+            <a href="https://www.facebook.com/" target='_blank'><span class="fa fa-facebook"></span></a>
+            <a href="https://twitter.com/?lang=ko" target='_blank'><span class="fa fa-twitter"></span></a>
+            <a href="https://www.google.com/webhp?hl=ko&ictx=2&sa=X&ved=0ahUKEwjf2Z7Lp4LiAhW0IqYKHezjCFoQPQgH" target='_blank'><span class="fa fa-google-plus"></span></a>
+            <a href="https://www.youtube.com/" target='_blank'><span class="fa fa-youtube"></span></a>
+            <a href="https://www.instagram.com/?hl=ko" target='_blank'><span class="fa fa-instagram"></span></a>
+          </div>
+          <div class="mu-footer-copyright">
+            <p>Designed by <a rel="nofollow" href="https://www.instagram.com/seon._.h_a/">멋사 7기 이선하</a></p>
+          </div>         
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  
+  <!-- jQuery library -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>  
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static 'js/bootstrap.js' %}"></script>   
+  <!-- Slick slider -->
+  <script type="text/javascript" src="{% static 'js/slick.js' %}"></script>
+  <!-- Counter -->
+  <script type="text/javascript" src="{% static 'js/waypoints.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.counterup.js' %}"></script>
+  <!-- Date Picker -->
+  <script type="text/javascript" src="{% static 'js/bootstrap-datepicker.js' %}"></script> 
+  <!-- Mixit slider -->
+  <script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
+  <!-- Add fancyBox -->        
+  <script type="text/javascript" src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+
+  <!-- Custom js -->
+  <script src="{% static 'js/custom.js' %}"></script> 
+
+  </body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+{% block logo %}
+<!-- LOGO -->                                                        
+<a class="navbar-brand" href="#index.html"><img src="{% static 'mask.png' %}" width="50px" height="50px" alt="Logo img"></a> 
+{% endblock logo %}
+
+{% block content %}
+  <!-- Start slider  -->
+  <section id="mu-slider">
+    <div class="mu-slider-area"> 
+      <div class="mu-top-slider">
+        <div class="mu-top-slider-single">
+          <img src="https://previews.123rf.com/images/afe207/afe2071602/afe207160200232/52329958-%EC%9D%B5%EB%AA%85%EC%9D%98-%EB%82%A8%EC%84%B1%EA%B3%BC-%EC%97%AC%EC%84%B1%EC%9D%98-%ED%94%84%EB%A1%9C%ED%95%84-%EA%B7%B8%EB%A6%BC-%EA%B0%90%EC%A0%95-%EC%8B%A4%EB%A3%A8%EC%97%A3-%ED%94%84%EB%A1%9C%ED%95%84-%EC%95%84%EB%B0%94%ED%83%80.jpg" wdith = "1000px" height = "750px" alt="img">
+          <div class="mu-top-slider-content">
+            <span class="mu-slider-small-title">anonymity</span>
+            <h2 class="mu-slider-title">익명 게시판</h2>
+            <p></p>           
+            <a href="{% url 'newblog' %}" class="mu-readmore-btn">글쓰기로 이동</a>
+          </div>
+        </div>   
+      </div>
+    </div>
+  </section>
+  <!-- End slider  -->
+
+  <!-- Start Client Testimonial section -->
+  <section id="mu-client-testimonial">
+    <div class="mu-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="mu-client-testimonial-area">
+              <div class="mu-title">
+                <span class="mu-subtitle">comment</span>
+                <h2>Anonymous</h2>
+                <i class="fa fa-spoon"></i>              
+                <span class="mu-title-bar"></span>
+              </div>
+              <!-- testimonial content -->
+              <div class="mu-testimonial-content">
+                <!-- testimonial slider -->
+                <ul class="mu-testimonial-slider">
+                  <li>
+                    <div class="mu-testimonial-single">                   
+                      <div class="mu-testimonial-info">
+                        <p>내가 참다가 한마디 하면, <br>너는 한마디를 못 참더라.</p>
+                      </div>
+                      <div class="mu-testimonial-bio">
+                        <p>- 하상욱</p>                      
+                      </div>
+                    </div>
+                  </li>
+                   <li>
+                    <div class="mu-testimonial-single">                   
+                      <div class="mu-testimonial-info">
+                        <p>끝까지 참으면 <br>참다가 끝난다</p>
+                      </div>
+                      <div class="mu-testimonial-bio">
+                        <p>- 하상욱</p>                      
+                      </div>
+                    </div>
+                  </li>
+                   <li>
+                    <div class="mu-testimonial-single">                   
+                      <div class="mu-testimonial-info">
+                        <p>할 말을 할 줄 아는 사람이란, <br>안 할 말은 안 하는 사람이다.</p>
+                      </div>
+                      <div class="mu-testimonial-bio">
+                        <p>- 하상욱</p>                      
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Client Testimonial section -->
+
+{% endblock content %}

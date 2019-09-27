@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <!-- Start About us -->
+  <section id="mu-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-about-us-area">
+            <div class="mu-title">
+              <span class="mu-subtitle">NOW</span>
+                <a id="#mu-about-us"></a><h2>글쓰기</h2>
+                <i class="fa fa-spoon"></i>              
+              <span class="mu-title-bar"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <!-- End About us -->
+    <div class="container1">
+      <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <div class="container2">
+          <input class="btn btn-dark" type="submit" value="제출하기">
+        </div>
+        <br>
+        <br>
+      </form>
+    </div>
+
+{% endblock %}

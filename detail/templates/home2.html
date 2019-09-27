@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<!-- Start About us -->
+<section id="mu-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-about-us-area">
+            <div class="mu-title">
+              <span class="mu-subtitle">NOW</span>
+              <a id="#mu-about-us"></a><h2>게시판</h2>
+              <i class="fa fa-spoon"></i>              
+              <span class="mu-title-bar"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About us -->
+<div class="container1">
+  <div class="card">
+    <div class="card-body">
+        {% for detail in details.all %}
+          <h1>{{ detail.title }}</h1>
+          <p>{{ detail.pub_date }}</p>
+          <p>{{ detail.content }}</p>
+          &nbsp;&nbsp;
+          <a href="{% url 'edit' pk=detail.pk %}" class="badge1 badge-primary">수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'remove' pk=detail.pk %}" class="badge2 badge-danger">삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'detail' pk=detail.pk %}" class="badge badge-secondary">댓글 쓰기</a>
+          <br>
+          <hr>
+        {% endfor %}
+    </div>
+ </div>
+</div>
+{% endblock %}

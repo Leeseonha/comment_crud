@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section id="mu-about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-about-us-area">
+                    <div class="mu-title">
+                        <span class="mu-subtitle">NOW</span>
+                        <a id="#mu-about-us"></a><h2>게시판 댓글</h2>
+                        <i class="fa fa-spoon"></i>              
+                        <span class="mu-title-bar"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container1">
+    <div class="card">
+        <div class="card-body">
+            <h1>{{ detail.title }}</h1>
+            <p>{{ detail.pub_date }}</p>
+            <p>{{ detail.content }}</p>
+                {% for comment in detail.comment_set.all %}
+                    <div class="jumbotron jumbotron-fluid">
+                            <h1 class="dispaly-4">{{ comment.comment_text }}</h1>
+                    </div>
+                    &nbsp;&nbsp;
+                    <a href="{% url 'comment_edit' detail.id comment.pk %}" class="badge1 badge-primary">수정</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'comment_remove' detail.id comment.pk %}" class="badge2 badge-danger">삭제</a>
+                    <br>
+                    <br>
+                {% endfor %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input class="badge badge-secondary" type="submit" value="Submit">
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
